@@ -6,14 +6,14 @@ import './styles/fonts.scss';
 import './styles/App.scss';
 
 const navItems = ['О нас', 'Помощь', 'third', 'fourth'];
-const catItems = ['Всё', 'Техника', 'Еда', 'Одежда'];
+const catItems = ['Техника', 'Еда', 'Одежда'];
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <Header navItems={navItems}/>
-        <Categories catItems = {catItems}/>
+        <Categories catItems={catItems} onClick={(item) => console.log(item)}/>
         Hello world
       </div>
     </div>
