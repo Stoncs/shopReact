@@ -1,5 +1,6 @@
 import Header from "./components/header/Header";
 import Categories from "./components/categories/Categories";
+import Content from "./components/content/Content";
 
 import './styles/nullstyle.scss';
 import './styles/fonts.scss';
@@ -13,8 +14,8 @@ function App() {
     <div className="App">
       <div className="container">
         <Header navItems={navItems}/>
-        <Categories catItems={catItems} onClick={(item) => console.log(item)}/>
-        Hello world
+          <Categories catItems={catItems} onClick={(item) => console.log(item)}/>
+        <Content />
       </div>
     </div>
   );

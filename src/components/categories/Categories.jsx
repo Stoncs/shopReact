@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
+import SortPopup from '../sortPopup/SortPopup';
 // import { classNames } from 'classnames';
 
 import './categories.scss';
+
+const sortPopupItems = ['алфавиту', 'популярности', 'цене'];
 
 export default function Categories({ catItems, onClick }) {
   const [activeItem, setActiveItem] = useState(null);
@@ -24,11 +27,7 @@ export default function Categories({ catItems, onClick }) {
           </li>
         ))}
       </ul>
-      <select>
-        <option value="Price">По цене</option>
-        <option value="Alphabet">По алфавиту</option>
-        <option value="Popularity" selected>По популярности</option>
-      </select>
+      <SortPopup sortPopupItems={sortPopupItems}/>
     </div>
   )
 }
