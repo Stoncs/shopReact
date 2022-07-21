@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import SortPopup from '../sortPopup/SortPopup';
+import {SortPopup} from '../';
 // import { classNames } from 'classnames';
 
 import './categories.scss';

@@ -1,21 +1,18 @@
 import React from "react";
+import {Product} from "../";
 
 import './content.scss';
-import shrek from './../../assets/img/content1.jpg'
 
-export default function Content() {
+export default function Content({products}) {
   return (
     <div className="content">
       <div className="content__wrapper">
-        <div className="content__element">
-          <div className="element__wrapper">
-            <div className="element__img">
-              <img src={shrek} alt="shrek" />
-            </div>
-            <div className="element__title">Shrek</div>
-            <button>В корзину</button>
-          </div>
-        </div>
+        {products && products.map(item => { return (
+            <div key={item.id} className="content__element">
+              <Product {...item} />
+            </div>)})}
+        {products && products.map(item => console.log(item))}
+        {/* {console.log(products)} */}
       </div>
     </div>
   )

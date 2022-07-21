@@ -4,7 +4,6 @@
   padding-top: 30px;
   padding-bottom: 15px;
 
-
   &__wrapper {
     border: 5px solid white;
     border-radius: 10px;
@@ -53,6 +52,17 @@
           transition: 0.2s ease-in;
         }
       }
+    }
+  }
+
+  &__btn {
+    border-radius: 10px;
+    ::before {
+      content: '20000р';
+      color: black;
+      margin-right: 20px;
+
+
     }
   }
 }

@@ -1,0 +1,36 @@
+@import './../../styles/variables.scss';
+@import './../../styles/general.scss';
+
+.content {
+  &__element {
+    border: 5px solid white;
+    border-radius: 8px;
+    padding: 0 15px;
+  }
+}
+
+.element {
+  
+  &__wrapper {
+    font-family: $font-rob-cons;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  }
+  &__img {
+    img {
+      width: 200px;
+    }
+  }
+  &__title {
+    font-family: $font-rob-cons;
+    font-size: 16px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+
+}

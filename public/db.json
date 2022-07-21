@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "imageUrl": "https://img.mvideo.ru/Pdb/10021227b.jpg",
+      "name": "Телевизор",
+      "price": 35000,
+      "category": 0,
+      "rating": 5
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://static.insales-cdn.com/r/YiGRUzGpPyE/rs:fit:1000:0:1/q:100/plain/images/products/1/1222/314934470/16-2-min.jpg",
+      "name": "Кружка",
+      "price": 300,
+      "category": 3,
+      "rating": 2
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://cdn.europa-market.ru/files/uploads/thumbnail/products/200910/105231-458x400.jpg?v=1616095642",
+      "name": "Майонез",
+      "price": 85,
+      "category": 1,
+      "rating": 10
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://pbs.twimg.com/profile_images/1271725365329891328/EG1dBvo3_400x400.jpg",
+      "name": "Чипсы крабовые",
+      "price": 150,
+      "category": 1,
+      "rating": 198
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://cdn1.ozone.ru/s3/multimedia-x/6018208977.jpg",
+      "name": "Чипсы сметана и лук",
+      "price": 150,
+      "category": 1,
+      "rating": 358
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://shop-cdn1.vigbo.tech/shops/77945/products/21002634/images/2-71c2b3b009cfc580bfc6379d9f512450.jpg?version=1",
+      "name": "Постельное бельё молния макуин",
+      "price": 2500,
+      "category": 3,
+      "rating": 536
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://images.wbstatic.net/big/new/13510000/13510368-3.jpg",
+      "name": "Белые носки",
+      "price": 130,
+      "category": 2,
+      "rating": 15
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://roba.pro/upload/iblock/dbc/jy5ixixypbd1hphfr82j2huym62trzut/1568.jpg",
+      "name": "Чёрная футболка",
+      "price": 700,
+      "category": 2,
+      "rating": 195
+    }
+  ]
+}
