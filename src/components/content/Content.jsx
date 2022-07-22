@@ -9,9 +9,10 @@ export default function Content({products}) {
       <div className="content__wrapper">
         {products && products.map(item => { return (
             <div key={item.id} className="content__element">
+              {/* {console.log(item)} */}
               <Product {...item} />
             </div>)})}
-        {products && products.map(item => console.log(item))}
+        {/* {products && products.map(item => console.log(item))} */}
         {/* {console.log(products)} */}
       </div>
     </div>

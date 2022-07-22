@@ -1,5 +1,4 @@
 import React from  'react';
-import {Link} from 'react-router-dom';
 
 import './header.scss';
 
@@ -14,7 +13,7 @@ function Header({ navItems }) {
         </div>
         <nav>
           <ul>
-            { navItems.map((item, index) => (
+            { navItems && navItems.map((item, index) => (
               <li key={`${item}_${index}`}><a href='#'>{item}</a></li>
             ))}
           </ul>
