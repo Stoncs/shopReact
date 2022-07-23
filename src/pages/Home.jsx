@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from 'react-redux'
-import { setCategory } from "../redux/actions/filters";
 
-
+import { setCategory } from "../redux/actions";
 import { Categories, Content } from "../components";
+
 const catItems = ['Техника', 'Еда', 'Одежда', 'Другое'];
 
 function Home() {

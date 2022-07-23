@@ -5,7 +5,6 @@ import './SortPopup.scss';
 
 export default function SortPopup({ sortPopupItems, onClickSortType, activeSortType }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  // const [activeSortPopupItem, setActiveSortPopupItem] = useState(0);
   const popupEl = useRef(null);
   let activeItemLabel = sortPopupItems.find(obj => obj.type === activeSortType).name;
   
@@ -13,7 +12,6 @@ export default function SortPopup({ sortPopupItems, onClickSortType, activeSortT
     if (!e.path.includes(popupEl.current)) {
       setVisiblePopup(false);
     }
-    // console.log('handleOutside');
   };
   useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);

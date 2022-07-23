@@ -1,11 +1,10 @@
 import React from "react";
-
 import { useSelector } from 'react-redux'
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 
-import {LoadingProduct, Product} from "../";
-import { fetchProducts } from "../../redux/actions/products";
+import { LoadingProduct, Product } from "../";
+import { fetchProducts } from "../../redux/actions";
 
 import './content.scss';
 
@@ -16,11 +15,9 @@ export default function Content() {
   const isLoaded = useSelector(({products}) => products.isLoaded);
   const {category, sortBy} = useSelector(({filters}) => filters);
 
-  // console.log(category, sortBy);
 
   useEffect(() => {
     dispatch(fetchProducts(category, sortBy));
-    // console.log(products);
   }, [category, sortBy]);
 
   return (

@@ -2,8 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 
 import { Header } from './components';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
+import { Home, Cart } from './pages';
 
 import './styles/nullstyle.scss';
 import './styles/fonts.scss';

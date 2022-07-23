@@ -7,7 +7,6 @@ export default function Product({ name, imageUrl, price, rating}) {
           <div className="element__wrapper">
             <div className="element__img element__item">
               <img src={imageUrl} alt={name} />
-              {/* {console.log(imageUrl)} */}
             </div>
             <div className="element__title element__item">{name}</div>
             <div className="element__price element__item">Цена: {price}</div>

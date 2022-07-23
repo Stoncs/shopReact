@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import {SortPopup} from '../';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-// import { classNames } from 'classnames';
+
+import {SortPopup} from '../';
+import { setSortBy } from '../../redux/actions';
 
 import './categories.scss';
-import { setSortBy } from '../../redux/actions/filters';
 
 const sortPopupItems = [
   {name: 'алфавиту', type: 'name', order: 'asc'}, 
