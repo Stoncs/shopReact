@@ -5,7 +5,6 @@ const initialState = {
 
 const products = (state = initialState, action) => {
   if (action.type === 'SET_PRODUCTS') {
-    console.log('done2')
     return {
       ...state,
       items: action.payload,
