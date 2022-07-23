@@ -30,7 +30,7 @@ export default function Content() {
             <div key={item.id} className="content__element">
               <Product {...item} />
             </div>)})
-            : Array(8).fill(<LoadingProduct />).map((item, index) => {return (
+            : Array(5).fill(<LoadingProduct />).map((item, index) => {return (
               <div key={index} className="content__element">
               {item}
             </div>)})

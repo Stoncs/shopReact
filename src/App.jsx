@@ -1,29 +1,28 @@
 import React from 'react';
-import { Header, Categories, Content } from "./components";
+import { Route, Routes } from 'react-router';
+
+import { Header } from './components';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
 
 import './styles/nullstyle.scss';
 import './styles/fonts.scss';
 import './styles/App.scss';
-import { useEffect } from "react";
-import { useDispatch } from 'react-redux'
-import { setCategory } from "./redux/actions/filters";
+
 
 const navItems = ['О нас', 'Помощь', 'third', 'fourth'];
-const catItems = ['Техника', 'Еда', 'Одежда', 'Другое'];
+
 
 function App() {
-  const dispatch = useDispatch()
-
-  const onSelectCategory = React.useCallback((index) => {
-    dispatch(setCategory(index));
-  }, []);
 
   return (
     <div className="App">
       <div className="container">
         <Header navItems={navItems}/>
-        <Categories catItems={catItems} onClickCategory={onSelectCategory}/>
-        <Content/>
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from  'react';
+import { Link } from 'react-router-dom'
 
 import './header.scss';
 
@@ -18,7 +19,7 @@ function Header({ navItems }) {
             ))}
           </ul>
         </nav>
-        <button className='btn header__btn'><span>Покупка</span></button>
+        <Link to='/cart'><button className='btn header__btn'><span>Покупка</span></button></Link>
       </div>
     </header>
   )
