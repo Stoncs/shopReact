@@ -1,33 +1,50 @@
 import React from 'react';
 import { useState } from 'react';
 import {SortPopup} from '../';
+import { useSelector, useDispatch } from 'react-redux/es/exports';
 // import { classNames } from 'classnames';
 
 import './categories.scss';
+import { setSortBy } from '../../redux/actions/filters';
 
-const sortPopupItems = ['алфавиту', 'популярности', 'цене'];
+const sortPopupItems = [
+  {name: 'алфавиту', type: 'name', order: 'asc'}, 
+  {name: 'популярности', type: 'rating', order: 'desc'}, 
+  {name: 'цене', type: 'price', order: 'asc'}
+];
 
-export default function Categories({ catItems, onClick }) {
+export default function Categories({ catItems, onClickCategory }) {
+  const dispatch = useDispatch();
+  const sortBy = useSelector(({filters}) => filters.sortBy);
   const [activeItem, setActiveItem] = useState(null);
+
+  function setActiveCategory(index) {
+    setActiveItem(index);
+    onClickCategory(index);
+  }
+
+  function onSelectSortType(type) {
+    dispatch(setSortBy(type));
+  }
 
   return (
     <div className='categories'>
       <ul>
         <li
           className={activeItem === null ? 'categories__active' : ''}
-          onClick={() => setActiveItem(null)}
+          onClick={() => setActiveCategory(null)}
           >
             Все
         </li>
         { catItems.map((item, index) => (
           <li
             className={ activeItem === index ? 'categories__active' : ''}
-            onClick={() => setActiveItem(index)} 
+            onClick={() => setActiveCategory(index)} 
             key={`${item}_${index}`}>{ item }
           </li>
         ))}
       </ul>
-      <SortPopup sortPopupItems={sortPopupItems}/>
+      <SortPopup activeSortType={sortBy.type} onClickSortType={onSelectSortType} sortPopupItems={sortPopupItems}/>
     </div>
   )
 }

@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 
 import './SortPopup.scss';
 
-export default function SortPopup({ sortPopupItems }) {
+export default function SortPopup({ sortPopupItems, onClickSortType, activeSortType }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [activeSortPopupItem, setActiveSortPopupItem] = useState(0);
+  // const [activeSortPopupItem, setActiveSortPopupItem] = useState(0);
   const popupEl = useRef(null);
-  let activeItemLabel = sortPopupItems[activeSortPopupItem];
+  let activeItemLabel = sortPopupItems.find(obj => obj.type === activeSortType).name;
   
   const handleOutsideClick = (e) => {
     if (!e.path.includes(popupEl.current)) {
@@ -21,13 +21,11 @@ export default function SortPopup({ sortPopupItems }) {
 
   const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
-    // console.log('toggle');
   }
 
   const onSelectItem = (index) => {
-    setActiveSortPopupItem(index);
+    onClickSortType(index);
     setVisiblePopup(false);
-    // console.log('onSelect');
   }
 
   return (
@@ -43,12 +41,12 @@ export default function SortPopup({ sortPopupItems }) {
       </span>
       <div className={classNames("sort-popup__wrapper", !visiblePopup ? "sort-popup__disabled" : "")}>
         { sortPopupItems &&
-         sortPopupItems.map((item, index) => (
+         sortPopupItems.map((obj, index) => (
           <div 
-            className={classNames("sort-popup__item", activeSortPopupItem === index ? "sort-popup__active" : '')}
-            onClick={() => onSelectItem(index)}
-            key={`${item}_${index}`}>
-            {item}
+            className={classNames("sort-popup__item", obj.type === activeSortType ? "sort-popup__active" : '')}
+            onClick={() => onSelectItem(obj)}
+            key={`${obj.type}_${index}`}>
+            {obj.name}
           </div>
         ))}
       </div>

@@ -4,15 +4,21 @@ const initialState = {
 }
 
 const products = (state = initialState, action) => {
-  if (action.type === 'SET_PRODUCTS') {
-    return {
-      ...state,
-      items: action.payload,
-      isLoaded: true,
-    };
-
+  switch (action.type) {
+    case 'SET_PRODUCTS':
+      return {
+        ...state,
+        items: action.payload,
+        isLoaded: true,
+      };
+    case 'SET_LOADING':
+      return {
+        ...state,
+        isLoaded: action.payload,
+      };
+    default:
+      return state;
   }
-  return state;
 }
 
 export default products;

@@ -1,23 +1,40 @@
 import React from "react";
-import {Product} from "../";
+
 import { useSelector } from 'react-redux'
+import { useEffect } from "react";
+import { useDispatch } from 'react-redux';
+
+import {LoadingProduct, Product} from "../";
+import { fetchProducts } from "../../redux/actions/products";
 
 import './content.scss';
 
 export default function Content() {
-  
+  const dispatch = useDispatch();
+
   const products = useSelector(({products}) => products.items);
+  const isLoaded = useSelector(({products}) => products.isLoaded);
+  const {category, sortBy} = useSelector(({filters}) => filters);
+
+  // console.log(category, sortBy);
+
+  useEffect(() => {
+    dispatch(fetchProducts(category, sortBy));
+    // console.log(products);
+  }, [category, sortBy]);
 
   return (
     <div className="content">
       <div className="content__wrapper">
-        {products && products.map(item => { return (
+        {isLoaded ? products.map(item => { return (
             <div key={item.id} className="content__element">
-              {/* {console.log(item)} */}
               <Product {...item} />
-            </div>)})}
-        {/* {products && products.map(item => console.log(item))} */}
-        {/* {console.log(products)} */}
+            </div>)})
+            : Array(8).fill(<LoadingProduct />).map((item, index) => {return (
+              <div key={index} className="content__element">
+              {item}
+            </div>)})
+        }
       </div>
     </div>
   )
