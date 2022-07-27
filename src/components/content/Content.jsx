@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 
 import { LoadingProduct, Product } from "../";
-import { fetchProducts } from "../../redux/actions";
+import { addProductCart, fetchProducts, minusProductCart } from "../../redux/actions";
 
 import './content.scss';
 

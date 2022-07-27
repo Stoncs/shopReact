@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom'
 import './header.scss';
 
 import logo from "./../../assets/img/logo.svg"
+import { useSelector } from 'react-redux';
 
 function Header({ navItems }) {
+  const totalPrice = useSelector(({cart}) => cart.totalPrice);
+
   return (
     <header className='header'>
       <div className='header__wrapper'>
         <div className='header__img'>
-          <img src={logo} alt="logo" />
+          <Link to='/'><img src={logo} alt="logo" /></Link>
         </div>
         <nav>
           <ul>
@@ -19,7 +22,7 @@ function Header({ navItems }) {
             ))}
           </ul>
         </nav>
-        <Link to='/cart'><button className='btn header__btn'><span>Покупка</span></button></Link>
+        <Link to='/cart'><button className='btn header__btn'><span>{totalPrice} ₽</span><span>Покупка</span></button></Link>
       </div>
     </header>
   )

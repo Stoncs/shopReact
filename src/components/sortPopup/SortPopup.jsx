@@ -9,7 +9,8 @@ export default function SortPopup({ sortPopupItems, onClickSortType, activeSortT
   let activeItemLabel = sortPopupItems.find(obj => obj.type === activeSortType).name;
   
   const handleOutsideClick = (e) => {
-    if (!e.path.includes(popupEl.current)) {
+    const path = e.path || (e.composedPath && e.composedPath());
+    if (!path.includes(popupEl.current)) {
       setVisiblePopup(false);
     }
   };

@@ -44,6 +44,18 @@
   &__item {
     margin-bottom: 10px;
   }
+}
 
+.btn_to_cart {
+  width: 105px;
+  border-left: 5px solid #fff0de;
+  border-right: 5px solid #fff0de;
+}
 
+.btn_disabled {
+  background-color: #ccbc9f;
+  &:hover {
+    cursor: default;
+    background-color: #ccbc9f;
+  }
 }
