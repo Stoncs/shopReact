@@ -5,14 +5,14 @@ const initialState = {
 }
 
 const cart = (state = initialState, action) => {
-  const newItems = {
-    ...state.items,
-    [action.payload]: [action.payload]
-  }
 
   switch (action.type) {
-    case 'ADD_PRODUCT_CART':
-
+    case 'ADD_PRODUCT_CART': {
+      const newItems = {
+        ...state.items,
+        [action.payload.id]: [action.payload]
+      }
+      console.log(action.payload)
       // newItems[action.payload.id][0].count === undefined 
       // ? newItems[action.payload.id][0].count = 1 
       // : ++newItems[action.payload.id][0].count
@@ -20,24 +20,34 @@ const cart = (state = initialState, action) => {
         ...state,
         items: newItems,
         totalAmount: state.totalAmount + 1,
-        totalPrice: state.totalPrice + newItems[action.payload][0].price,
+        totalPrice: state.totalPrice + newItems[action.payload.id][0].price,
       }
-
-    case 'PLUS_CART_ITEM':
+    }
+    case 'PLUS_CART_ITEM': {
+      const newItems = {
+        ...state.items,
+        [action.payload.id]: [action.payload]
+      }
       return {
         ...state,
         items: newItems,
         totalAmount: state.totalAmount + 1,
-        totalPrice: state.totalPrice + state.items[action.payload][0].price,
+        totalPrice: state.totalPrice + state.items[action.payload.id][0].price,
       }
+    }
 
-    case 'MINUS_CART_ITEM':
+    case 'MINUS_CART_ITEM': {
+      const newItems = {
+        ...state.items,
+        [action.payload.id]: [action.payload]
+      }
       return {
         ...state,
         items: newItems,
         totalAmount: state.totalAmount - 1,
-        totalPrice: state.totalPrice - state.items[action.payload][0].price,
+        totalPrice: state.totalPrice - state.items[action.payload.id][0].price,
       }
+    }
     default:
       return state;
 
