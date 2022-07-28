@@ -12,10 +12,6 @@ const cart = (state = initialState, action) => {
         ...state.items,
         [action.payload.id]: [action.payload]
       }
-      console.log(action.payload)
-      // newItems[action.payload.id][0].count === undefined 
-      // ? newItems[action.payload.id][0].count = 1 
-      // : ++newItems[action.payload.id][0].count
       return {
         ...state,
         items: newItems,
@@ -23,6 +19,7 @@ const cart = (state = initialState, action) => {
         totalPrice: state.totalPrice + newItems[action.payload.id][0].price,
       }
     }
+
     case 'PLUS_CART_ITEM': {
       const newItems = {
         ...state.items,
@@ -41,11 +38,23 @@ const cart = (state = initialState, action) => {
         ...state.items,
         [action.payload.id]: [action.payload]
       }
+      
+      if (newItems[action.payload.id][0].count <= 0) delete newItems[action.payload.id]
+      
       return {
         ...state,
         items: newItems,
         totalAmount: state.totalAmount - 1,
         totalPrice: state.totalPrice - state.items[action.payload.id][0].price,
+      }
+    }
+
+    case 'CLEAR_CART': {
+      return {
+        ...state,
+        items: [],
+        totalAmount: 0,
+        totalPrice: 0,
       }
     }
     default:

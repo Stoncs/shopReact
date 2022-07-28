@@ -1,0 +1,10 @@
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-clear {
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
