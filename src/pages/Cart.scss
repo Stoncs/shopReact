@@ -1,3 +1,5 @@
+@import './../styles/variables.scss';
+
 .cart {
   position: relative;
   display: flex;
@@ -7,4 +9,38 @@
 .btn-clear {
   align-self: flex-end;
   margin-bottom: 10px;
+}
+
+.cart-titles {
+  &__wrapper{
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border: 2px solid white;
+    font-family: $font-rob-cons;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__img {
+    width: 50px;
+  }
+
+  &__name {
+    width: 300px;
+  }
+
+  &__price {
+    width: 100px;
+  }
+
+  &__count {
+    width: 100px;
+  }
+
+  &__btn {
+    width: 40px;
+  }
 }

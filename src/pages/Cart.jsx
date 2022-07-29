@@ -13,10 +13,22 @@ export default function Cart() {
   });
 
   const showBtn = () => (<div className="btn-clear"><button className="btn" onClick={() => dispatch(clearProductCart())}>Очистить корзину</button></div>);
+
+  const showTitles = () => (
+    <div className="cart-titles__wrapper">
+      <div className="cart-titles__img"></div>
+      <div className="cart-titles__name">Название</div>
+      <div className="cart-titles__price">Стоимость</div>
+      <div className="cart-titles__count">Количество</div>
+      <div className="cart-titles__btn"></div>
+      <div className="cart-titles__btn"></div>
+    </div>
+  );
   
   return (
     <div className="cart">
-      { addedProducts.length > 0 && showBtn()}
+      { addedProducts.length > 0 && showBtn() }
+      { addedProducts.length > 0 && showTitles() }
       <div className="cart__items">
         { addedProducts && addedProducts.map((obj, index) => {
           return (
