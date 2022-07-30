@@ -11,6 +11,7 @@ function Header({ navItems }) {
 
   return (
     <header className='header'>
+
       <div className='header__wrapper'>
         <div className='header__img'>
           <Link to='/'><img src={logo} alt="logo" /></Link>
@@ -18,7 +19,9 @@ function Header({ navItems }) {
         <nav>
           <ul>
             { navItems && navItems.map((item, index) => (
-              <li key={`${item}_${index}`}><a href='#'>{item}</a></li>
+              <li key={`${item.name}_${index}`}>
+                <Link to={item.path}><a href='#'>{item.name}</a></Link>
+              </li>
             ))}
           </ul>
         </nav>

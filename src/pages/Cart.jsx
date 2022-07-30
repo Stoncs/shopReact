@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CartItem } from "../components";
+import { CartItem, EmptyCart } from "../components";
 import { clearProductCart } from "../redux/actions";
 
 import './Cart.scss';
@@ -27,6 +27,7 @@ export default function Cart() {
   
   return (
     <div className="cart">
+      { addedProducts.length === 0 && <EmptyCart />}
       { addedProducts.length > 0 && showBtn() }
       { addedProducts.length > 0 && showTitles() }
       <div className="cart__items">

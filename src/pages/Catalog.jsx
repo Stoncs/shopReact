@@ -6,7 +6,7 @@ import { Categories, Content } from "../components";
 
 const catItems = ['Техника', 'Еда', 'Одежда', 'Другое'];
 
-function Home() {
+export default function Catalog() {
   const dispatch = useDispatch()
 
   const onSelectCategory = React.useCallback((index) => {
@@ -20,5 +20,3 @@ function Home() {
     </div>
   )
 }
-
-export default Home;

@@ -8,13 +8,9 @@ export default function Product({ id, name, imageUrl, price, rating, onClickProd
   const dispatch = useDispatch();
   const items = useSelector(({cart}) => cart.items)
   const [count, setCount] = useState(items[id] === undefined ? 0 : items[id][0].count);
-  // console.log(items)
   const $btn_plus = useRef();
   const $btn_minus = useRef();
 
-  // useEffect(() => {
-  //   $btn_plus.current.
-  // }, [count])
   const onClickPlusProductToCart = () => {
     const newCount = count + 1;
     setCount(count + 1);
