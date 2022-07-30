@@ -13,14 +13,16 @@ const sortPopupItems = [
   {name: 'цене', type: 'price', order: 'asc'}
 ];
 
+// при возвращении на странцу не выделяется категория, которая была активна до этого 
 export default function Categories({ catItems, onClickCategory }) {
   const dispatch = useDispatch();
   const sortBy = useSelector(({filters}) => filters.sortBy);
-  const [activeItem, setActiveItem] = useState(null);
+  const category = useSelector(({filters}) => filters.category);
+
+  const activeItem = category;
 
   function setActiveCategory(index) {
-    setActiveItem(index);
-    onClickCategory(index);
+    dispatch(onClickCategory(index));
   }
 
   function onSelectSortType(type) {

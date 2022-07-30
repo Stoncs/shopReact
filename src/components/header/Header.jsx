@@ -20,7 +20,7 @@ function Header({ navItems }) {
           <ul>
             { navItems && navItems.map((item, index) => (
               <li key={`${item.name}_${index}`}>
-                <Link to={item.path}><a href='#'>{item.name}</a></Link>
+                <Link to={item.path}>{item.name}</Link>
               </li>
             ))}
           </ul>
