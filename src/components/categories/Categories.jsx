@@ -1,8 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 
-import {SortPopup} from '../';
+import { SortPopup } from '../';
 import { setSortBy } from '../../redux/actions';
 
 import './categories.scss';
@@ -13,7 +12,7 @@ const sortPopupItems = [
   {name: 'цене', type: 'price', order: 'asc'}
 ];
 
-// при возвращении на странцу не выделяется категория, которая была активна до этого 
+
 export default function Categories({ catItems, onClickCategory }) {
   const dispatch = useDispatch();
   const sortBy = useSelector(({filters}) => filters.sortBy);

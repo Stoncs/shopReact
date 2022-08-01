@@ -1,10 +1,12 @@
 import classNames from "classnames";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { addProductCart, minusProductCart, plusProductCart } from '../../redux/actions';
+
 import "./product.scss";
 
-export default function Product({ id, name, imageUrl, price, rating, onClickProduct}) {
+export default function Product({ id, name, imageUrl, price, rating}) {
   const dispatch = useDispatch();
   const items = useSelector(({cart}) => cart.items)
   const [count, setCount] = useState(items[id] === undefined ? 0 : items[id][0].count);

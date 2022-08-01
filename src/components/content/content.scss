@@ -4,6 +4,11 @@
   display: flex;
   justify-content: center;
 
+
+  &__under {
+    padding-bottom: 20px;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: flex-start;

@@ -21,17 +21,19 @@ export default function Content() {
   }, [category, sortBy]);
 
   return (
-    <div className="content">
-      <div className="content__wrapper">
-        {isLoaded ? products.map(item => { return (
-            <div key={item.id} className="content__element">
-              <Product {...item} />
-            </div>)})
-            : Array(5).fill(<LoadingProduct />).map((item, index) => {return (
-              <div key={index} className="content__element">
-              {item}
-            </div>)})
-        }
+    <div className="content__under">
+      <div className="content">
+        <div className="content__wrapper">
+          {isLoaded ? products.map(item => { return (
+              <div key={item.id} className="content__element">
+                <Product {...item} />
+              </div>)})
+              : Array(5).fill(<LoadingProduct />).map((item, index) =>  {return (
+                <div key={index} className="content__element">
+                {item}
+              </div>)})
+          }
+        </div>
       </div>
     </div>
   )

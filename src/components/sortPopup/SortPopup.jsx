@@ -14,6 +14,7 @@ export default function SortPopup({ sortPopupItems, onClickSortType, activeSortT
       setVisiblePopup(false);
     }
   };
+  
   useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
   }, []) ;

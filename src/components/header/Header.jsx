@@ -1,10 +1,11 @@
 import React from  'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './header.scss';
 
-import logo from "./../../assets/img/logo.svg"
-import { useSelector } from 'react-redux';
+import logo from "./../../assets/img/logo.svg";
+
 
 function Header({ navItems }) {
   const totalPrice = useSelector(({cart}) => cart.totalPrice);
