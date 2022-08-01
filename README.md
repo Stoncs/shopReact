@@ -4,7 +4,7 @@ https://study-shop-react-application.herokuapp.com/
 
 This is my first app built with react. I made a site with a simple design to learn how to work with react. To understand this library.  
 
-Products won't load because I made a website without a database. And the data was taken from the json file that was on the local server (from ./public/db.json).
+Products won't load because I made a website without a database. And the data was taken from the json file that was on the local server (from /public/db.json).
 
 ## Used technologies
 
